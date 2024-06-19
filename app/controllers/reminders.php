@@ -11,17 +11,20 @@ class Reminders extends Controller {
     }
 
     public function create() {
-        if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user_id = $_POST['user_id'];
             $subject = $_POST['subject'];
             $reminder = $this->model('Reminder');
             $reminder->create_reminder($user_id, $subject);
-            header('Location: /reminders');           
-        }
-        else{
-            $this->view('reminders/create');
+            header('Location: /reminders');
+            exit;
+        } else {
+            // Redirect to index if not a POST request
+            header('Location: /reminders');
+            exit;
         }
     }
+
 
     public function update($id){
         if($_SERVER['REQUEST_METHOD'] == 'POST'){

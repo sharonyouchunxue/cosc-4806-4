@@ -43,6 +43,7 @@ class User
             // Successful login
             $_SESSION['auth'] = 1;
             $_SESSION['username'] = ucwords($username);
+            $_SESSION['userid'] = $rows['userid'];
             unset($_SESSION['failedAuth']);
             unset($_SESSION['lockout_time']);
             $this->log_attempt($username, 'good');
