@@ -1,7 +1,9 @@
+/* Reset box-sizing for all elements */
 * {
   box-sizing: border-box;
 }
 
+/* General body styling */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -11,28 +13,130 @@ body {
   margin: 0;
 }
 
+/* Styling for the vertical navbar */
+.navbar {
+  background-color: #fff;
+  padding: 10px 20px;
+  border-right: 1px solid #ddd;
+  width: 200px; /* Set the width for the vertical navbar */
+  height: 100vh; /* Make it full height */
+  position: fixed; /* Fix it to the side */
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1000;
+}
+
+/* Styling for the brand name in the navbar */
+.navbar-brand {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin-bottom: 20px; /* Space between the brand and the menu */
+}
+
+/* Styling for the container within the navbar */
+.container-fluid {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Remove default margin and padding for the navbar menu */
+.navbar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling for each navigation item */
+.nav-item {
+  position: relative;
+  width: 100%;
+}
+
+/* Styling for each navigation link */
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 20px;
+  display: block;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+/* Hover effect for navigation links */
+.nav-link:hover {
+  background-color: #e2e6ea;
+}
+
+/* Initial hidden state of dropdown menu */
+.dropdown-menu {
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 100%; /* Position to the right of the parent item */
+  width: 200px; /* Set a fixed width */
+}
+
+/* Show dropdown menu on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Styling for each dropdown item */
+.dropdown-item {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+/* Hover effect for dropdown items */
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Container adjustments to avoid overlap with navbar */
 .container {
+  margin-left: 220px; /* Adjust to avoid overlap with the navbar */
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px; /* Add padding to ensure spacing */
+  padding: 20px;
   margin-bottom: 60px;
 }
 
+/* Create container styling */
 .create-container {
   background-color: white;
   padding: 20px;
   border-radius: 5px;
-  width: 150%; /* Adjust width for bigger form */
+  width: 150%;
   max-width: 600px;
   text-align: left;
   border: 1px solid #f1f1f1;
   box-sizing: border-box;
-  transform: translateX(-15%); /* Move the form slightly to the left */
+  transform: translateX(-15%);
 }
 
+/* Login container styling */
 .login-container {
   background-color: white;
   padding: 16px;
@@ -46,18 +150,20 @@ body {
   box-sizing: border-box;
 }
 
+/* Heading styling */
 h1 {
   margin-bottom: 20px;
   font-weight: bold;
 }
 
+/* Label styling */
 label {
   display: block;
   margin: 10px 0 5px;
-  font-weight: bold; /* Make the label text bold */
+  font-weight: bold;
 }
 
-/* Full-width inputs */
+/* Full-width inputs styling */
 input[type=text], input[type=password], input[type=email] {
   width: 100%;
   padding: 12px 20px;
@@ -70,6 +176,7 @@ input[type=text], input[type=password], input[type=email] {
   font-family: Arial, sans-serif;
 }
 
+/* Placeholder styling */
 input::placeholder {
   color: #999;
   font-size: 16px;
@@ -77,7 +184,7 @@ input::placeholder {
   line-height: 1.5; 
 }
 
-/* Set a style for all buttons */
+/* Button styling */
 button {
   background-color: #04AA6D;
   color: white;
@@ -89,11 +196,12 @@ button {
   font-size: 16px;
 }
 
-/* Add a hover effect buttons */
+/* Hover effect for buttons */
 button:hover {
   opacity: 0.8;
 }
 
+/* Alert box styling */
 .alert {
   margin-bottom: 15px;
   padding: 10px;
@@ -101,31 +209,37 @@ button:hover {
   text-align: left;
 }
 
+/* Success alert styling */
 .alert-success {
   background-color: #d4edda;
   color: #155724;
   border: 1px solid #c3e6cb;
 }
 
+/* Danger alert styling */
 .alert-danger {
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
 }
 
+/* Paragraph styling */
 p {
   margin-top: 20px;
 }
 
+/* Link styling */
 a {
   color: #007BFF;
   text-decoration: none;
 }
 
+/* Hover effect for links */
 a:hover {
   text-decoration: underline;
 }
 
+/* Footer styling */
 .footer {
   background-color: #f4f4f4;
   padding: 20px 0;
@@ -133,5 +247,4 @@ a:hover {
   width: 100%;
   position: fixed;
   bottom: 0;
-
 }
