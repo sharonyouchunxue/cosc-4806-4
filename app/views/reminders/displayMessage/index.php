@@ -8,7 +8,7 @@
         </div>
     </div>
 
-    <!-- Success Message -->
+    <!-- Success Message display -->
     <?php if (isset($data['message'])): ?>
         <div class="alert alert-success"><?php echo htmlspecialchars($data['message']); ?></div>
     <?php endif; ?>
