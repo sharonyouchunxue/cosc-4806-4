@@ -25,14 +25,14 @@
                     <p><?php echo htmlspecialchars($reminder['subject']); ?></p>
                     <p><small>Created on: <?php echo htmlspecialchars($reminder['create_at']); ?></small></p>
                     <p><small>Reminder Time: <?php echo htmlspecialchars($reminder['reminder_time']); ?></small></p>
-                    <!-- Update Form Inline -->
+                    <!-- Update Form -->
                     <form method="POST" action="/reminders/update/<?php echo $reminder['id']; ?>" style="display: inline;">
                         <input type="text" name="subject" value="<?php echo htmlspecialchars($reminder['subject']); ?>" required>
                         <label for="completed-<?php echo $reminder['id']; ?>">Completed</label>
                         <input type="checkbox" id="completed-<?php echo $reminder['id']; ?>" name="completed" value="1" <?php echo $reminder['completed'] ? 'checked' : ''; ?>>
                         <button type="submit" class="btn btn-warning">Update</button>
                     </form>
-                    <!-- Delete Form Inline -->
+                    <!-- Delete Form -->
                     <form method="POST" action="/reminders/delete/<?php echo $reminder['id']; ?>" style="display: inline;">
                         <button type="submit" class="btn btn-danger">Delete</button>
                     </form>
