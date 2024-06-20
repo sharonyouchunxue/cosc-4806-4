@@ -28,6 +28,10 @@
                     <!-- Update Form -->
                     <form method="POST" action="/reminders/update/<?php echo $reminder['id']; ?>" style="display: inline;">
                         <input type="text" name="subject" value="<?php echo htmlspecialchars($reminder['subject']); ?>" required>
+                        <label for="date-<?php echo $reminder['id']; ?>">Date</label>
+                        <input type="date" id="date-<?php echo $reminder['id']; ?>" name="date" value="<?php echo date('Y-m-d', strtotime($reminder['reminder_time'])); ?>" required>
+                        <label for="time-<?php echo $reminder['id']; ?>">Time</label>
+                        <input type="time" id="time-<?php echo $reminder['id']; ?>" name="time" value="<?php echo date('H:i', strtotime($reminder['reminder_time'])); ?>" required>
                         <label for="completed-<?php echo $reminder['id']; ?>">Completed</label>
                         <input type="checkbox" id="completed-<?php echo $reminder['id']; ?>" name="completed" value="1" <?php echo $reminder['completed'] ? 'checked' : ''; ?>>
                         <button type="submit" class="btn btn-warning">Update</button>
