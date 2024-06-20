@@ -1,4 +1,3 @@
-/* Reset box-sizing for all elements */
 * {
   box-sizing: border-box;
 }
@@ -113,7 +112,7 @@ body {
 
 /* Container adjustments to avoid overlap with navbar */
 .container {
-  margin-left: 220px; /* Adjust to avoid overlap with the navbar */
+  margin-left: 220px; 
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -239,7 +238,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Footer styling */
 .footer {
   background-color: #f4f4f4;
   padding: 20px 0;
@@ -248,3 +246,16 @@ a:hover {
   position: fixed;
   bottom: 0;
 }
+
+
+.create-container {
+    background-color: white;
+    padding: 60px;
+    border-radius: 5px;
+    max-width: 600px;
+    text-align: left;
+    border: 1px solid #f1f1f1;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+

@@ -20,7 +20,7 @@ class Reminders extends Controller {
             header('Location: /reminders');
             exit;
         } else {
-            header('Location: /reminders');
+            $this->view('reminders/create/index');
             exit;
         }
     }

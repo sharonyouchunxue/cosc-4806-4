@@ -26,7 +26,7 @@ class Reminder {
     // Function to allow user to create a reminder after login
     public function create_reminder($user_id, $subject) {
         $db = db_connect();
-        $statement = $db->prepare("INSERT INTO reminders (user_id, subject, created_at) VALUES (:user_id, :subject, NOW())");
+        $statement = $db->prepare("INSERT INTO reminders (user_id, subject, create_at) VALUES (:user_id, :subject, NOW())");
         $statement->execute([':user_id' => $user_id, ':subject' => $subject]);
         return $db->lastInsertId();
     }
