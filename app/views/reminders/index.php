@@ -8,12 +8,23 @@
         </div>
     </div>
 
-    <!-- List of Reminders Container -->
+    <!-- Display success message for reminder creation -->
+    <?php
+    session_start();
+    if (isset($_SESSION['success_message'])) {
+        echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+        unset($_SESSION['success_message']); // Clear the message after displaying it
+    }
+    ?>
+
+    <!-- Reminders List Container -->
     <div class="row">
         <div class="col-lg-12 create-container">
             <?php foreach ($data['reminders'] as $reminder): ?>
                 <div class="reminder-item">
                     <p><?php echo htmlspecialchars($reminder['subject']); ?></p>
+                    <p><small>Created on: <?php echo htmlspecialchars($reminder['create_at']); ?></small></p>
+                    <p><small>Reminder Time: <?php echo htmlspecialchars($reminder['reminder_time']); ?></small></p>
                     <!-- Update Form Inline -->
                     <form method="POST" action="/reminders/update/<?php echo $reminder['id']; ?>" style="display: inline;">
                         <input type="text" name="subject" value="<?php echo htmlspecialchars($reminder['subject']); ?>" required>
