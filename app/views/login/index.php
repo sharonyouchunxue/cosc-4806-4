@@ -27,7 +27,7 @@
 				?>
 						</div>
 						<div id="countdown"></div>
-						<!--Display counter timer if user entered after three times failed attempts-->
+						<!--Display counter timer after user entered three times failed attempts-->
 						<script>
 								let lockoutTime = <?php echo isset($_SESSION['lockout_time']) ? $_SESSION['lockout_time'] - time() : 0; ?>;
 								if (lockoutTime > 0) {
