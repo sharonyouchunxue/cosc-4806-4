@@ -54,7 +54,10 @@ class Reminders extends Controller {
     //function to update an existing reminder
     public function update($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            session_start();
             $subject = isset($_POST['subject']) ? $_POST['subject'] : null;
+            $date = isset($_POST['date']) ? $_POST['date'] : null;
+            $time = isset($_POST['time']) ? $_POST['time'] : null;
             $completed = isset($_POST['completed']) ? (bool)$_POST['completed'] : null;
             $deleted = isset($_POST['deleted']) ? (bool)$_POST['deleted'] : null;
 
@@ -62,6 +65,9 @@ class Reminders extends Controller {
 
             if ($subject !== null) {
                 $update_data['subject'] = $subject;
+            }
+            if ($date !== null && $time !== null) {
+                $update_data['reminder_time'] = $date . ' ' . $time;
             }
             if ($completed !== null) {
                 $update_data['completed'] = $completed;
@@ -73,6 +79,15 @@ class Reminders extends Controller {
             if (!empty($update_data)) {
                 $reminder = $this->model('Reminder');
                 $reminder->update_reminder($id, $update_data);
+
+                // Set success message
+                $_SESSION['success_message'] = "Reminder updated successfully.";
+
+                // Check if the request is AJAX
+                if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
+                    echo json_encode(['success' => true, 'message' => "Reminder updated successfully."]);
+                    return;
+                }
             }
 
             header('Location: /reminders');
@@ -82,6 +97,7 @@ class Reminders extends Controller {
             $this->view('reminders/update', ['reminder' => $reminder_info]);
         }
     }
+
 
     //function to delete a reminder
     public function delete($id) {
