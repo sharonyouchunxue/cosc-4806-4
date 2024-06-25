@@ -27,7 +27,7 @@
 				?>
 						</div>
 						<div id="countdown"></div>
-	          <!--Display counter timer if user entered after three times failed attempts-->
+						<!--Display counter timer if user entered after three times failed attempts-->
 						<script>
 								let lockoutTime = <?php echo isset($_SESSION['lockout_time']) ? $_SESSION['lockout_time'] - time() : 0; ?>;
 								if (lockoutTime > 0) {
@@ -47,17 +47,17 @@
 								<fieldset>
 										<div class="form-group">
 												<label for="username">Username</label>
-												<input required type="text" class="form-control" name="username">
+												<input required type="text" class="form-control" name="username" />
 										</div>
 										<div class="form-group">
 												<label for="password">Password</label>
-												<input required type="password" class="form-control" name="password">
+												<input required type="password" class="form-control" name="password" />
 										</div>
-										<br>
+										<br />
 										<button type="submit" class="btn btn-primary">Login</button>
 								</fieldset>
 						</form>
-						<br>
+						<br />
 						<p>Don't have an account yet? <a href="/create">Create Account Here</a>.</p>
 				</div>
 		</div>
