@@ -76,7 +76,7 @@ $(document).ready(function() {
                         $('#success-message').fadeOut();
                     }, 3000);
 
-                    //update the reminder item in the user interface
+                    //update the reminder item in the UI
                     $form.closest('.reminder-item').find('p').first().text($form.find('input[name="subject"]').val());
 
                     // Update the completion status
