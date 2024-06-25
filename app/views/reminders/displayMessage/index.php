@@ -3,7 +3,7 @@
     <div class="page-header" id="banner">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Message</h1>
+                <h1>Message Display</h1>
             </div>
         </div>
     </div>
