@@ -25,11 +25,11 @@
             <?php $counter = 1; ?>
             <?php foreach ($data['reminders'] as $reminder): ?>
                 <div class="reminder-item" id="reminder-<?php echo $reminder['id']; ?>">
-                    <p><?php echo $counter . '. ' . htmlspecialchars($reminder['subject']); ?></p>
-                    <p><small>Created on: <?php echo htmlspecialchars($reminder['create_at']); ?></small></p>
-                    <p><small>Reminder Time: <?php echo htmlspecialchars($reminder['reminder_time']); ?></small></p>
-                    <p class="completion-status" id="status-<?php echo $reminder['id']; ?>">
-                        <?php echo $reminder['completed'] ? 'Status: Completed' : 'Status: Not Completed'; ?>
+                    <p class="info-display info-display-bold"><?php echo $counter . '. ' . htmlspecialchars($reminder['subject']); ?></p>
+                    <p class="info-display">Created on: <?php echo htmlspecialchars($reminder['create_at']); ?></p>
+                    <p class="info-display">Reminder Time: <?php echo htmlspecialchars($reminder['reminder_time']); ?></p>
+                    <p class="info-display completion-status" id="status-<?php echo $reminder['id']; ?>">
+                        Status: <?php echo $reminder['completed'] ? 'Completed' : 'Not Completed'; ?>
                     </p>
                     <!-- Update Form -->
                     <form class="update-form" method="POST" action="/reminders/update/<?php echo $reminder['id']; ?>" data-id="<?php echo $reminder['id']; ?>" style="display: inline;">
@@ -54,7 +54,7 @@
 </main>
 
 <!-- jQuery for AJAX requests -->
-<script src="c:/xampp/htdocs/COSC4806/app/views/js/jquery-3.6.0.min"></script>
+<script src="c:/xampp/htdocs/COSC4806/app/views/js/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
     $('.update-form').on('submit', function(e) {
@@ -76,7 +76,7 @@ $(document).ready(function() {
                         $('#success-message').fadeOut();
                     }, 3000);
 
-                    //update the reminder item in the UI
+                    //update the reminder item in the user interface
                     $form.closest('.reminder-item').find('p').first().text($form.find('input[name="subject"]').val());
 
                     // Update the completion status

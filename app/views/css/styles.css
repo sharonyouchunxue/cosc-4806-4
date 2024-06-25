@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-/* General body styling */
+/* body style */
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -12,14 +12,14 @@ body {
   margin: 0;
 }
 
-/* Styling for the vertical navbar */
+/* vertical navbar */
 .navbar {
   background-color: #fff;
   padding: 10px 20px;
   border-right: 1px solid #ddd;
-  width: 200px; /* Set the width for the vertical navbar */
-  height: 100vh; /* Make it full height */
-  position: fixed; /* Fix it to the side */
+  width: 200px; 
+  height: 100vh; 
+  position: fixed; 
   top: 0;
   left: 0;
   display: flex;
@@ -28,16 +28,16 @@ body {
   z-index: 1000;
 }
 
-/* Styling for the brand name in the navbar */
+/* brand name in the navbar */
 .navbar-brand {
   font-size: 1.5em;
   font-weight: bold;
   text-decoration: none;
   color: #000;
-  margin-bottom: 20px; /* Space between the brand and the menu */
+  margin-bottom: 20px; 
 }
 
-/* Styling for the container within the navbar */
+/* container within the navbar */
 .container-fluid {
   display: flex;
   flex-direction: column;
@@ -55,13 +55,13 @@ body {
   flex-direction: column;
 }
 
-/* Styling for each navigation item */
+/* each navigation item */
 .nav-item {
   position: relative;
   width: 100%;
 }
 
-/* Styling for each navigation link */
+/* each navigation link */
 .nav-link {
   text-decoration: none;
   color: #000;
@@ -87,8 +87,8 @@ body {
   padding: 0;
   position: absolute;
   top: 0;
-  left: 100%; /* Position to the right of the parent item */
-  width: 200px; /* Set a fixed width */
+  left: 100%; 
+  width: 200px; 
 }
 
 /* Show dropdown menu on hover */
@@ -96,7 +96,7 @@ body {
   display: block;
 }
 
-/* Styling for each dropdown item */
+/* each dropdown item */
 .dropdown-item {
   padding: 10px 20px;
   text-decoration: none;
@@ -162,6 +162,17 @@ label {
   font-weight: bold;
 }
 
+/* Styling for the information display */
+.info-display {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 16px; 
+}
+
+.info-display-bold {
+  font-weight: bold;
+}
+
 /* Full-width inputs styling */
 input[type=text], input[type=password], input[type=email] {
   width: 100%;
@@ -175,7 +186,7 @@ input[type=text], input[type=password], input[type=email] {
   font-family: Arial, sans-serif;
 }
 
-/* Placeholder styling */
+/* Placeholder */
 input::placeholder {
   color: #999;
   font-size: 16px;
@@ -247,15 +258,13 @@ a:hover {
   bottom: 0;
 }
 
-
 .create-container {
-    background-color: white;
-    padding: 60px;
-    border-radius: 5px;
-    max-width: 600px;
-    text-align: left;
-    border: 1px solid #f1f1f1;
-    box-sizing: border-box;
-    margin: 0 auto;
+  background-color: white;
+  padding: 60px;
+  border-radius: 5px;
+  max-width: 600px;
+  text-align: left;
+  border: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
-
