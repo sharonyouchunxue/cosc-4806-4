@@ -98,7 +98,6 @@ class Reminders extends Controller {
         }
     }
 
-
     //function to delete a reminder
     public function delete($id) {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
